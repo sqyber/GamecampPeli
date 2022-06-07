@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace GamecampPeli
@@ -9,17 +10,27 @@ namespace GamecampPeli
     {
         [SerializeField] private float damage = 1;
 
-        [SerializeField] private GameObject damageArea;
-        
+        [SerializeField] private float damageArea;
+
+        private void Start()
+        {
+            InvokeRepeating("AreaOfEffect", 1, 1);
+        }
+
         private void Update()
         {
-            void OnCollisionEnter2D(Collision2D col)
+
+        }
+
+        private void AreaOfEffect()
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageArea);
+
+            foreach (Collider col in hitColliders)
             {
-                if (col.gameObject.GetComponent<IDamageable>() != null)
-                {
-                    gameObject.GetComponent<IDamageable>().Damage(damage);
-                }
+                col.GetComponent<IDamageable>().DealDamage(damage);
             }
+            
         }
     }
 }

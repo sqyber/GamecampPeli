@@ -6,6 +6,6 @@ namespace GamecampPeli
 {
     public interface IDamageable
     {
-        void Damage(float damage);
+        void DealDamage(float damage);
     }
 }
