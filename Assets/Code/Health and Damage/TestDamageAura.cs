@@ -10,27 +10,26 @@ namespace GamecampPeli
     {
         [SerializeField] private float damage = 1;
 
-        [SerializeField] private float damageArea;
+        [SerializeField] private float radius = 1;
+
 
         private void Start()
         {
-            InvokeRepeating("AreaOfEffect", 1, 1);
+
         }
 
         private void Update()
         {
-
+            AreaDamage(transform.position, radius);
         }
 
-        private void AreaOfEffect()
+        private void AreaDamage(Vector2 objectPosition, float radius)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageArea);
-
-            foreach (Collider col in hitColliders)
+            Collider[] hitColliders = Physics.OverlapSphere(objectPosition, radius);
+            foreach (var hitCollider in hitColliders)
             {
-                col.GetComponent<IDamageable>().DealDamage(damage);
+                hitCollider.GetComponent<IDamageable>().DealDamage(damage);
             }
-            
         }
     }
 }

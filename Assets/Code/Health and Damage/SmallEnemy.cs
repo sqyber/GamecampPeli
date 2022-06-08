@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace GamecampPeli
@@ -17,6 +18,11 @@ namespace GamecampPeli
         {
             health -= damage;
             Debug.Log("Health: " + health);
+            
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
