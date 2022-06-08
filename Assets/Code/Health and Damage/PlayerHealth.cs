@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GamecampPeli
 {
-    public class Player : MonoBehaviour, IDamageable
+    public class PlayerHealth : MonoBehaviour, IDamageable
     {
         [SerializeField] private float health = 100f;
 
