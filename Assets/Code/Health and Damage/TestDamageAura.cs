@@ -8,7 +8,7 @@ namespace GamecampPeli
 {
     public class TestDamageAura : MonoBehaviour
     {
-        [SerializeField] private float damage = 1;
+        [SerializeField] private int damage = 1;
 
         [SerializeField] private float radius = 1;
 

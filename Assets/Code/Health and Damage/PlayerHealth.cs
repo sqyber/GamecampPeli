@@ -1,16 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.InputSystem.Controls;
 
 namespace GamecampPeli
 {
     public class PlayerHealth : MonoBehaviour, IDamageable
     {
-        [SerializeField] private float health = 100f;
+        [SerializeField] private int maxHealth = 100;
+        private int currentHealth;
 
-        public void DealDamage(float damage)
+        [SerializeField] private HealthBarManager healthBar;
+        //[SerializeField] private TextMeshProUGUI healthText;
+
+        // Initializing currentHealth and the maxHealth to the healthbar
+        private void Awake()
         {
-            health -= damage;
+            currentHealth = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
+            //healthText.text = currentHealth.ToString();
+        }
+
+        // IDamageable interfaces damage function with required components for
+        // damaging the player
+        public void DealDamage(int damage)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+            //healthText.text = currentHealth.ToString();
         }
     }
 }

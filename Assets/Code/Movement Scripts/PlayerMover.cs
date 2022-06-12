@@ -10,14 +10,20 @@ public class PlayerMover : MonoBehaviour
     private Vector2 movementInput;
     
     private void Update()
-    { 
-        Vector2 movement = movementInput * (Time.deltaTime * movementSpeed);
-
-        transform.Translate(movement);
+    {
+        Move();
     }
 
     private void OnMove(InputAction.CallbackContext callbackContext)
     {
         movementInput = callbackContext.ReadValue<Vector2>();
+    }
+
+    // Simple transform movement for the player which uses the players input
+    private void Move()
+    {
+        Vector2 movement = movementInput * (Time.deltaTime * movementSpeed);
+
+        transform.Translate(movement);
     }
 }

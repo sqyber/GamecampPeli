@@ -7,18 +7,16 @@ namespace GamecampPeli
 {
     public class SmallEnemy : MonoBehaviour, IDamageable
     {
-        [SerializeField] private float health = 10;
+        [SerializeField] private int health = 10;
 
-        private void Start()
-        {
-            Debug.Log("Health: " + health);
-        }
-
-        public void DealDamage(float damage)
+        // The DealDamage function of the IDamageable interface with
+        // required components and functions for damaging the enemy
+        // and removing the enemy from existence when it reaches
+        // 0 health
+        public void DealDamage(int damage)
         {
             health -= damage;
-            Debug.Log("Health: " + health);
-            
+
             if (health <= 0)
             {
                 Destroy(gameObject);

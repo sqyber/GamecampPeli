@@ -23,11 +23,14 @@ namespace GamecampPeli
             GetPlayerPosition();
         }
 
+        // Function used to get the players position
         private void GetPlayerPosition()
         {
             playerPosition = playerCharacter.transform.position;
         }
 
+        // Function to update the cameras position, this changes
+        // according to the players position.
         private void UpdateCameraPosition()
         {
             newCameraPosition.x = playerPosition.x;

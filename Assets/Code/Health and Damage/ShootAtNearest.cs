@@ -6,11 +6,12 @@ namespace GamecampPeli
 {
     public class ShootAtNearest : MonoBehaviour
     {
-        [SerializeField] private float shootingDistance = 7f;
+        [SerializeField] private float rangeOfFiring = 7;
         //[SerializeField] private float projectileSpeed = 5f;
         [SerializeField] private float fireRate = 3f;
-        [SerializeField] private float damage = 1f;
+        [SerializeField] private int damage = 1;
         //[SerializeField] private GameObject projectile;
+        
         private GameObject target;
         private bool canShoot = true;
  
@@ -19,6 +20,7 @@ namespace GamecampPeli
             CheckIfCanShoot();
         }
  
+        // Function to shoot at the set target
         private void Fire ()
         {
             target.GetComponent<IDamageable>().DealDamage(damage);
@@ -30,12 +32,16 @@ namespace GamecampPeli
             //tmpProjectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * projectileSpeed;
         }
  
+        // Enumerator used for the fire rate of shooting
         private IEnumerator AllowToShoot ()
         {
             yield return new WaitForSeconds(fireRate);
             canShoot = true;
         }
 
+        // Function to check if the player can shoot at an enemy
+        // Requires the range of firing and the damage amount
+        // Checks if the player has an enemy in range and then fires if possible
         private void CheckIfCanShoot()
         {
             GameObject[] allTargets = GameObject.FindGameObjectsWithTag("Enemy");
@@ -57,7 +63,7 @@ namespace GamecampPeli
                 }
             }
             //shoot if the closest is in the fire range
-            if (Vector2.Distance(transform.position, target.transform.position) < shootingDistance)
+            if (Vector2.Distance(transform.position, target.transform.position) < rangeOfFiring)
             {
                 Fire();
             }
