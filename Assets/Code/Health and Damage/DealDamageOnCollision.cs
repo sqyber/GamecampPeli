@@ -7,19 +7,36 @@ namespace GamecampPeli
     public class DealDamageOnCollision : MonoBehaviour
     {
         [SerializeField] private float damage = 1f;
-        private void OnTriggerStay2D(Collider2D other)
+        [SerializeField] private int howOftenToDealDamage = 1;
+        [SerializeField] private GameObject player;
+
+        // Bool used to track when the enemy collides with the player
+        private bool collisionWithPlayer;
+        
+        // Trigger function to detect when collision between enemy and player starts
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.gameObject.CompareTag("PlayerCharacter")) return;
-            other.GetComponent<IDamageable>().DealDamage(damage);
-            Debug.Log("Enemy hit you!");
+            collisionWithPlayer = true;
+            StartCoroutine(nameof(DamagePerSecond));
+        }
+        
+        // Trigger function to detect when collision between enemy and player starts
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("PlayerCharacter")) return;
+            collisionWithPlayer = false;
+            StopCoroutine(nameof(DamagePerSecond));
         }
 
-        private void OnCollisionStay(Collision other)
+        // Enumerator to deal damage once per second
+        private IEnumerator DamagePerSecond()
         {
-            if (other.gameObject.CompareTag("PlayerCharacter"))
+            while (collisionWithPlayer)
             {
-                other.gameObject.GetComponent<IDamageable>().DealDamage(damage);
-                Debug.Log("The enemy hit you!");
+                player.GetComponent<IDamageable>().DealDamage(damage);
+                Debug.Log("An enemy hit you!");
+                yield return new WaitForSeconds(howOftenToDealDamage);
             }
         }
     }
