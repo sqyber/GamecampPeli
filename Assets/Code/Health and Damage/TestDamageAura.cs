@@ -9,26 +9,41 @@ namespace GamecampPeli
     public class TestDamageAura : MonoBehaviour
     {
         [SerializeField] private int damage = 1;
+        [SerializeField] private float timeBetweenDamageInSeconds = 1.0f;
 
-        [SerializeField] private float radius = 1;
+        // Bool to track if enemy is in range
+        private bool inRangeOfAOE = false;
 
+        // Collider2D used to store the game objects collider
+        private Collider2D gOCollider;
 
         private void Start()
         {
-
+            gOCollider = gameObject.GetComponent<Collider2D>();
         }
 
-        private void Update()
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            AreaDamage(transform.position, radius);
+            if (!other.gameObject.CompareTag("DamageAura")) return;
+            inRangeOfAOE = true;
+            StartCoroutine(AOEDamage(gOCollider));
         }
 
-        private void AreaDamage(Vector2 objectPosition, float radius)
+        private void OnTriggerExit2D(Collider2D other)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(objectPosition, radius);
-            foreach (var hitCollider in hitColliders)
+            if (!other.gameObject.CompareTag("DamageAura")) return;
+            inRangeOfAOE = false;
+            StopCoroutine(AOEDamage(gOCollider));
+        }
+
+        private IEnumerator AOEDamage(Collider2D enemy)
+        {
+            if (enemy == null) throw new ArgumentNullException(nameof(enemy));
+            while (inRangeOfAOE)
             {
-                hitCollider.GetComponent<IDamageable>().DealDamage(damage);
+                enemy.GetComponent<IDamageable>().DealDamage(damage);
+                Debug.Log("An enemy was hit with the AoE aura!");
+                yield return new WaitForSeconds(timeBetweenDamageInSeconds);
             }
         }
     }

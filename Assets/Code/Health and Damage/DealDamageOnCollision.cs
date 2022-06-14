@@ -9,7 +9,7 @@ namespace GamecampPeli
     public class DealDamageOnCollision : MonoBehaviour
     {
         [SerializeField] private int damage = 1;
-        [SerializeField] private int timeBetweenDamageInSeconds = 1;
+        [SerializeField] private float timeBetweenDamageInSeconds = 1.0f;
 
         // Bool used to track when the enemy collides with the player
         private bool collisionWithPlayer;

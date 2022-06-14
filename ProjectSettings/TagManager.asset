@@ -7,6 +7,7 @@ TagManager:
   - PlayerCharacter
   - Enemy
   - Shooter
+  - DamageAura
   layers:
   - Default
   - TransparentFX
