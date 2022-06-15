@@ -38,8 +38,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038146973, y: -0.0000009536743}
-  m_SizeDelta: {x: 172.05, y: 34.85}
+  m_AnchoredPosition: {x: 0.05, y: 0}
+  m_SizeDelta: {x: 173.92, y: 37.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581094278
 MonoBehaviour:
@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 1196075303}
   - component: {fileID: 1196075306}
   - component: {fileID: 1388601007361373220}
+  - component: {fileID: 6029397361028106868}
   m_Layer: 0
   m_Name: DamageAura
   m_TagString: Untagged
@@ -419,6 +420,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeIncrement: {x: 0.1, y: 0.1, z: 0}
+--- !u!114 &6029397361028106868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196075301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5dee152bb5a2249855a0187a3a8e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1555815234
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,8 +467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00079345703, y: -0.055067062}
-  m_SizeDelta: {x: 5.2165527, y: 5.895302}
+  m_AnchoredPosition: {x: -0.05080414, y: -0.055067062}
+  m_SizeDelta: {x: 3.3465576, y: 3.695301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1555815237
 CanvasRenderer:

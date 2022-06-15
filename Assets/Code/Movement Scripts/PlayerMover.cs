@@ -14,6 +14,7 @@ public class PlayerMover : MonoBehaviour
         Move();
     }
 
+    // Function to store the players input
     private void OnMove(InputAction.CallbackContext callbackContext)
     {
         movementInput = callbackContext.ReadValue<Vector2>();

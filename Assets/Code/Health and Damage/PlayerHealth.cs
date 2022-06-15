@@ -12,14 +12,12 @@ namespace GamecampPeli
         private int currentHealth;
 
         [SerializeField] private HealthBarManager healthBar;
-        //[SerializeField] private TextMeshProUGUI healthText;
 
-        // Initializing currentHealth and the maxHealth to the healthbar
+        // Initializing currentHealth and the maxHealth to the health bar
         private void Awake()
         {
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
-            //healthText.text = currentHealth.ToString();
         }
 
         // IDamageable interfaces damage function with required components for
@@ -28,7 +26,6 @@ namespace GamecampPeli
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
-            //healthText.text = currentHealth.ToString();
         }
     }
 }
