@@ -30,11 +30,6 @@ namespace GamecampPeli
             GameObject tmpProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            throw new NotImplementedException();
-        }
-
         // Enumerator used for the fire rate of shooting
         private IEnumerator AllowToShoot()
         {
@@ -47,6 +42,7 @@ namespace GamecampPeli
         // Checks if the player has an enemy in range and then fires if possible
         private void CheckIfCanShoot()
         {
+            // Array for the enemies
             GameObject[] allTargets = GameObject.FindGameObjectsWithTag("Enemy");
 
             if (!canShoot) return;
@@ -55,8 +51,6 @@ namespace GamecampPeli
             // Coroutine to allow a delay (fire rate) between shots
             StartCoroutine("AllowToShoot");
             
-            // Array for the enemies
-            if (allTargets == null) return;
             target = allTargets[0];
             
             // Target the closest object (enemy)
@@ -67,6 +61,9 @@ namespace GamecampPeli
                     target = tmpTarget;
                 }
             }
+
+            // If target doesn't exist, stop the function
+            if (target == null) return;
             
             // Fire at the target, if it's within firing range
             if (Vector2.Distance(transform.position, target.transform.position) < rangeOfFiring)

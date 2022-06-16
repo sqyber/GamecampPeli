@@ -27,6 +27,8 @@ namespace GamecampPeli
         // Function for movement of the projectile
         private void MoveProjectile()
         {
+            if (target == null) return;
+            
             transform.position = Vector2.MoveTowards(
                 transform.position,
                 target.transform.position,
@@ -36,6 +38,12 @@ namespace GamecampPeli
         // Function to destroy the projectile and deal damage to target
         private void DestroyProjectile()
         {
+            if (target == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            
             if (Vector2.Distance(transform.position, target.transform.position) < 0.4)
             {
                 Destroy(gameObject);

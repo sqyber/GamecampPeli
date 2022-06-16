@@ -11,7 +11,7 @@ namespace GamecampPeli
         [SerializeField] private int damage = 1;
         [SerializeField] private float timeBetweenDamageInSeconds = 1.0f;
 
-        // Bool to track if enemy is in range
+        // Bool to track if enemy is in range of AoE
         private bool inRangeOfAOE = false;
 
         // Collider2D used to store the game objects collider
@@ -39,10 +39,10 @@ namespace GamecampPeli
         private IEnumerator AOEDamage(Collider2D enemy)
         {
             if (enemy == null) throw new ArgumentNullException(nameof(enemy));
+
             while (inRangeOfAOE)
             {
                 enemy.GetComponent<IDamageable>().DealDamage(damage);
-                Debug.Log("An enemy was hit with the AoE aura!");
                 yield return new WaitForSeconds(timeBetweenDamageInSeconds);
             }
         }
