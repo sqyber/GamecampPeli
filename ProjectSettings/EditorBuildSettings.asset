@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Mainmenu.unity
+    guid: 14e3bdd81f0a03543a8f37b83d774cb6
+  - enabled: 1
+    path: Assets/Scenes/FarmLevel.unity
+    guid: ec257bf1a6c21ed4485c47cca80c7942
+  - enabled: 1
     path: Assets/Scenes/CombatScenery1.unity
     guid: 9edc6fa8c6abb51469cb29c038c89d34
   m_configObjects: {}
