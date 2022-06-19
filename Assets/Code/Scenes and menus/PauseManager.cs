@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace GamecampPeli
 {
     public class PauseManager : MonoBehaviour
     {
-        [SerializeField] private GameObject pauseMenu;
-        private bool paused;
+        [SerializeField] private GameObject pauseMenu, optionsMenu;
+        [SerializeField] private GameObject pauseFirstButton, optionsFirstButton, optionsClosedButton;
 
         private PauseAction action;
 
@@ -20,7 +21,7 @@ namespace GamecampPeli
 
         private void Start()
         {
-            action.Pause.PauseGame.performed += _ => CheckIfPaused();
+            action.Pause.PauseGame.performed += _ => PauseUnpause();
         }
 
         private void OnEnable()
@@ -33,30 +34,59 @@ namespace GamecampPeli
             action.Disable();
         }
 
-        private void CheckIfPaused()
+        // Function to pause and unpause the game with a check for the options menu
+        // so that the player can't open the pause menu while the options menu is
+        // open, also the game won't unpause if the options are open.
+        private void PauseUnpause()
         {
-            if (paused)
+            if (optionsMenu.activeInHierarchy) return;
+            
+            if (!pauseMenu.activeInHierarchy)
             {
-                ResumeGame();
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0f;
+                
+                // Remove the currently selected object for the EventSystem
+                EventSystem.current.SetSelectedGameObject(null);
+                
+                // Set a new selected object for the EventSystem
+                EventSystem.current.SetSelectedGameObject(pauseFirstButton);
             }
             else
             {
-                PauseGame();
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
             }
         }
 
-        private void PauseGame()
+        // Function to open the options menu
+        public void OpenOptions()
         {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-            paused = true;
+            if (optionsMenu.activeInHierarchy) return;
+            
+            pauseMenu.SetActive(false);
+            optionsMenu.SetActive(true);
+                
+            // Remove the currently selected object for the EventSystem
+            EventSystem.current.SetSelectedGameObject(null);
+                
+            // Set a new selected object for the EventSystem
+            EventSystem.current.SetSelectedGameObject(optionsFirstButton);
         }
 
-        private void ResumeGame()
+        // Function to close the options menu
+        public void CloseOptions()
         {
-            paused = false;
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1;
+            if (!optionsMenu.activeInHierarchy) return;
+            
+            optionsMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+                
+            // Remove the currently selected object for the EventSystem
+            EventSystem.current.SetSelectedGameObject(null);
+                
+            // Set a new selected object for the EventSystem
+            EventSystem.current.SetSelectedGameObject(optionsClosedButton);
         }
     }
 }
