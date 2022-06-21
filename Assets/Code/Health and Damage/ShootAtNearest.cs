@@ -45,9 +45,13 @@ namespace GamecampPeli
             // Array for the enemies
             GameObject[] allTargets = GameObject.FindGameObjectsWithTag("Enemy");
 
+            // If the array is empty, return
+            if (allTargets.Length < 1) return;
+            
+            // If canShoot is false, return if not turn it false and go on with the function
             if (!canShoot) return;
             canShoot = false;
-            
+
             // Coroutine to allow a delay (fire rate) between shots
             StartCoroutine("AllowToShoot");
             
