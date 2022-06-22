@@ -37,7 +37,7 @@ namespace GamecampPeli
         // Function to pause and unpause the game with a check for the options menu
         // so that the player can't open the pause menu while the options menu is
         // open, also the game won't unpause if the options are open.
-        private void PauseUnpause()
+        public void PauseUnpause()
         {
             if (optionsMenu.activeInHierarchy) return;
             
