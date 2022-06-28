@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Shooter
   - DamageAura
+  - Oribter
   layers:
   - Default
   - TransparentFX

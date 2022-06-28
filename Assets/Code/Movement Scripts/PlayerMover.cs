@@ -7,9 +7,15 @@ public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 1;
 
+    private Rigidbody2D playerRb;
     private Vector2 movementInput;
+
+    private void Awake()
+    {
+        playerRb = GetComponent<Rigidbody2D>();
+    }
     
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
     }
@@ -23,8 +29,6 @@ public class PlayerMover : MonoBehaviour
     // Simple transform movement for the player which uses the players input
     private void Move()
     {
-        Vector2 movement = movementInput * (Time.deltaTime * movementSpeed);
-
-        transform.Translate(movement);
+        playerRb.velocity = movementInput * movementSpeed * Time.fixedDeltaTime;
     }
 }

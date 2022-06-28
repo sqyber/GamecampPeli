@@ -9,7 +9,7 @@ namespace GamecampPeli
         // Projectiles speed and damage
         [SerializeField] private float projectileSpeed = 1f;
         [SerializeField] private int damage = 1;
-        
+
         // Used to store the target game object
         private GameObject target;
         

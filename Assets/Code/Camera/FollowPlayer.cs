@@ -17,7 +17,7 @@ namespace GamecampPeli
             GetPlayerPosition();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             UpdateCameraPosition();
             GetPlayerPosition();

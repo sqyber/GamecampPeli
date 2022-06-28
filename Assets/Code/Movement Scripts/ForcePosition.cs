@@ -9,7 +9,7 @@ namespace GamecampPeli
         // Used to store parents position
         private Vector2 parentPosition;
 
-        private void Update()
+        private void FixedUpdate()
         {
             parentPosition = transform.parent.position;
             UpdatePosition();
