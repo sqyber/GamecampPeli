@@ -118,6 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
+  progressAmount: 3
+  currencyMin: 5
+  currencyMax: 10
+  progressBar: {fileID: 2733119486247846816, guid: 629bba7713cbcc04391204215be6d439, type: 3}
 --- !u!114 &7451393043555486924
 MonoBehaviour:
   m_ObjectHideFlags: 0

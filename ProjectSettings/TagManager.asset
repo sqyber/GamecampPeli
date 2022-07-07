@@ -9,6 +9,7 @@ TagManager:
   - Shooter
   - DamageAura
   - Oribter
+  - ProgressBar
   layers:
   - Default
   - TransparentFX
