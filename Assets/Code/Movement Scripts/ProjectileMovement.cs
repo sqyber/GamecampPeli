@@ -15,7 +15,7 @@ namespace GamecampPeli
         
         private void Awake()
         {
-            target = GameObject.FindGameObjectWithTag("Shooter").GetComponent<ShootAtNearest>().Target;
+            Initialize();
         }
         
         private void Update()
@@ -48,6 +48,18 @@ namespace GamecampPeli
             {
                 Destroy(gameObject);
                 target.GetComponent<IDamageable>().DealDamage(damage);
+            }
+        }
+
+        private void Initialize()
+        {
+            if (gameObject.CompareTag("ShooterChainProjectile"))
+            {
+                target = GameObject.FindGameObjectWithTag("ShooterChain").GetComponent<ShootAtNearestInChain>().Target;
+            }
+            else
+            {
+                target = GameObject.FindGameObjectWithTag("Shooter").GetComponent<ShootAtNearest>().Target;
             }
         }
     }

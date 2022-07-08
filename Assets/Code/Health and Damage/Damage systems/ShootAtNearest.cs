@@ -31,7 +31,7 @@ namespace GamecampPeli
         }
 
         // Enumerator used for the fire rate of shooting
-        private IEnumerator AllowToShoot()
+        private IEnumerator AllowFiring()
         {
             yield return new WaitForSeconds(fireRate);
             canShoot = true;
@@ -53,7 +53,7 @@ namespace GamecampPeli
             canShoot = false;
 
             // Coroutine to allow a delay (fire rate) between shots
-            StartCoroutine(nameof(AllowToShoot));
+            StartCoroutine(nameof(AllowFiring));
             
             target = allTargets[0];
             

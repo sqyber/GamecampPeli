@@ -10,6 +10,9 @@ TagManager:
   - DamageAura
   - Oribter
   - ProgressBar
+  - ShooterChain
+  - ShooterProjectile
+  - ShooterChainProjectile
   layers:
   - Default
   - TransparentFX
