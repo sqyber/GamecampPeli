@@ -36,8 +36,11 @@ namespace GamecampPeli
             if (player == null) throw new ArgumentNullException(nameof(player));
             while (collisionWithPlayer)
             {
-                player.GetComponent<IDamageable>().DealDamage(damage);
-                Debug.Log("An enemy hit you!");
+                if (player.GetComponent<PlayerHealth>().CurrentHealth >= 1)
+                {
+                    player.GetComponent<IDamageable>().DealDamage(damage);
+                    Debug.Log("An enemy hit the player!");
+                }
                 yield return new WaitForSeconds(timeBetweenDamageInSeconds);
             }
         }

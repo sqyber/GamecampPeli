@@ -1090,7 +1090,6 @@ MonoBehaviour:
   damage: 1
   rateOfFire: 4
   amountOfTargets: 1
-  AllowShooting: 0
 --- !u!50 &1075607705
 Rigidbody2D:
   serializedVersion: 4

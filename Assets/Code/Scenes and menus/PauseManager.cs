@@ -9,7 +9,7 @@ namespace GamecampPeli
 {
     public class PauseManager : MonoBehaviour
     {
-        [SerializeField] private GameObject pauseMenu, optionsMenu;
+        [SerializeField] private GameObject pauseMenu, optionsMenu, deathMenu;
         [SerializeField] private GameObject pauseFirstButton, optionsFirstButton, optionsClosedButton;
 
         private PauseAction action;
@@ -39,6 +39,12 @@ namespace GamecampPeli
         // open, also the game won't unpause if the options are open.
         public void PauseUnpause()
         {
+            if (deathMenu.activeInHierarchy)
+            {
+                Time.timeScale = 1f;
+                return;
+            }
+            
             if (optionsMenu.activeInHierarchy) return;
             
             if (!pauseMenu.activeInHierarchy)
