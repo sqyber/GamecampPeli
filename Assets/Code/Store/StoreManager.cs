@@ -23,8 +23,8 @@ namespace GamecampPeli
 
         public void Update()
         {
-            textMesh.text = CurrentHpBonus.ToString();
-            textMesh.text = MaxHpBonus.ToString();
+            textMesh.text = CurrentHpBonus.ToString(); 
+            //textMesh.text = MaxHpBonus.ToString();
         }
 
         public void IncreaseValue()
