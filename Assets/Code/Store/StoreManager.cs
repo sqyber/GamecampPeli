@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -8,18 +9,22 @@ namespace GamecampPeli
 {
     public class StoreManager : MonoBehaviour
     {
-
+        
         [SerializeField] private int MaxHpBonus = 10;
-        [SerializeField] int CurrentHpBonus = 1;
+        [SerializeField] private int CurrentHpBonus = 1;
 
+        private TextMeshProUGUI textMesh;
+        
         // Update is called once per frame
-        void Start () {
-     
+        void Start ()
+        {
+            textMesh = gameObject.GetComponent<TextMeshProUGUI>();
         }
 
         public void Update()
         {
-
+            textMesh.text = CurrentHpBonus.ToString();
+            textMesh.text = MaxHpBonus.ToString();
         }
 
         public void IncreaseValue()
