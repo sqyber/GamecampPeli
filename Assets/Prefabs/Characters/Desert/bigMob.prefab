@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7451393043555486924}
   - component: {fileID: 7451393043555486925}
   - component: {fileID: 7451393043555486926}
+  - component: {fileID: 226160149}
   m_Layer: 0
   m_Name: bigMob
   m_TagString: Enemy
@@ -135,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1c98822a73dca48bc92a2f9cc13ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  progressAmount: 1
+  health: 25
+  progressAmount: 3
   currencyMin: 5
   currencyMax: 10
 --- !u!114 &7451393043555486924
@@ -180,3 +181,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   timeBetweenDamageInSeconds: 1
+--- !u!95 &226160149
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7451393043555486927}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d530f5bc3dce8240b026d5485d112e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

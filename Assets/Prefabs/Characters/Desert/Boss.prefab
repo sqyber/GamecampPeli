@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2578356186441808427}
   - component: {fileID: 2578356186441808426}
   - component: {fileID: 2578356186441808437}
+  - component: {fileID: 7606667523606243602}
   - component: {fileID: 1532367646}
   m_Layer: 0
   m_Name: Boss
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1532433746, guid: 9aa5796d5bdcf364cb6f95d6bcc05f41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,7 +146,6 @@ MonoBehaviour:
   progressAmount: 0
   currencyMin: 10
   currencyMax: 25
-  progressBar: {fileID: 2733119486247846816, guid: 629bba7713cbcc04391204215be6d439, type: 3}
 --- !u!114 &2578356186441808427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +187,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   timeBetweenDamageInSeconds: 1
+--- !u!114 &7606667523606243602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2578356186441808439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7a150a3671cc041ae993f671d85fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  add: {fileID: 0}
+  spawnTime: 1
+  spawnDelay: 7.5
+  stopSpawning: 0
 --- !u!95 &1532367646
 Animator:
   serializedVersion: 4
