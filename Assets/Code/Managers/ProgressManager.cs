@@ -9,7 +9,7 @@ namespace GamecampPeli
     {
         [SerializeField] private TextMeshProUGUI progressDisplay;
         [SerializeField] private ProgressBarManager progressBar;
-        
+
         private int progressValue;
 
         public int ProgressValue
@@ -18,8 +18,20 @@ namespace GamecampPeli
             set
             {
                 progressValue = value;
-                progressDisplay.text = progressValue.ToString();
+                if (progressValue >= progressBar.MaxProgress)
+                {
+                    progressDisplay.text = progressBar.MaxProgress + " / " + progressBar.MaxProgress;
+                }
+                else
+                {
+                    progressDisplay.text = progressValue + " / " + progressBar.MaxProgress;
+                }
             }
+        }
+
+        private void Awake()
+        {
+            progressDisplay.text = progressValue + " / " + progressBar.MaxProgress;
         }
 
         private void Update()

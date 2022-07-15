@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7451393043555486920}
   - component: {fileID: 7451393043555486921}
-  - component: {fileID: 7451393043555486922}
+  - component: {fileID: 5944129448153652035}
   - component: {fileID: 7451393043555486923}
   - component: {fileID: 7451393043555486924}
   - component: {fileID: 7451393043555486925}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7451393043555486927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.38, y: -0.53532654, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 1209311452, guid: c138b548f85bf7c409fa0f2554559272, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7451393043555486922
-CircleCollider2D:
+--- !u!60 &5944129448153652035
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,12 +99,30 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.12120822, y: 0.1468123}
+      - {x: -0.13175829, y: 0.15296656}
+      - {x: -0.14912099, y: 0.11505393}
+      - {x: -0.15120822, y: 0.0015318766}
+      - {x: -0.14681232, y: -0.10032903}
+      - {x: -0.08648312, y: -0.1635167}
+      - {x: 0.08, y: -0.16439593}
+      - {x: 0.14593303, y: -0.07296657}
+      - {x: 0.14681217, y: 0.10087918}
 --- !u!114 &7451393043555486923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,11 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1c98822a73dca48bc92a2f9cc13ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25
-  progressAmount: 3
+  health: 1
+  progressAmount: 1
   currencyMin: 5
   currencyMax: 10
-  progressBar: {fileID: 2733119486247846816, guid: 629bba7713cbcc04391204215be6d439, type: 3}
 --- !u!114 &7451393043555486924
 MonoBehaviour:
   m_ObjectHideFlags: 0

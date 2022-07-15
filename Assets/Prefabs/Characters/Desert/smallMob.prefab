@@ -122,7 +122,6 @@ MonoBehaviour:
   progressAmount: 1
   currencyMin: 1
   currencyMax: 5
-  progressBar: {fileID: 2733119486247846816, guid: 629bba7713cbcc04391204215be6d439, type: 3}
 --- !u!114 &2445263711877228828
 MonoBehaviour:
   m_ObjectHideFlags: 0
