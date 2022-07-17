@@ -9,7 +9,7 @@ namespace GamecampPeli
 {
     public class PauseManager : MonoBehaviour
     {
-        [SerializeField] private GameObject pauseMenu, optionsMenu, deathMenu;
+        [SerializeField] private GameObject pauseMenu, optionsMenu, deathMenu, winMenu;
         [SerializeField] private GameObject pauseFirstButton, optionsFirstButton, optionsClosedButton;
 
         private PauseAction action;
@@ -40,6 +40,12 @@ namespace GamecampPeli
         public void PauseUnpause()
         {
             if (deathMenu.activeInHierarchy)
+            {
+                Time.timeScale = 1f;
+                return;
+            }
+
+            if (winMenu.activeInHierarchy)
             {
                 Time.timeScale = 1f;
                 return;

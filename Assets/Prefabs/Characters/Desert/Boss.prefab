@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2578356186441808426}
   - component: {fileID: 2578356186441808437}
   - component: {fileID: 7606667523606243602}
+  - component: {fileID: 4290415543211530555}
   - component: {fileID: 1532367646}
   m_Layer: 0
   m_Name: Boss
@@ -203,6 +204,20 @@ MonoBehaviour:
   spawnTime: 1
   spawnDelay: 7.5
   stopSpawning: 0
+--- !u!114 &4290415543211530555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2578356186441808439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6a5d829f8d538428f264a65c9d47d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winMenu: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!95 &1532367646
 Animator:
   serializedVersion: 4

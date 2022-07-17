@@ -14,6 +14,11 @@ namespace GamecampPeli
 
         private ProgressManager progressManager;
         private CurrencyManager currencyManager;
+        
+        public int ProgressAmount
+        {
+            get { return progressAmount; }
+        }
 
         private void Start()
         {
@@ -22,11 +27,6 @@ namespace GamecampPeli
             currencyMax = currencyMax + 1;
         }
         
-        public int ProgressAmount
-        {
-            get { return progressAmount; }
-        }
-
         // The DealDamage function of the IDamageable interface with
         // required components and functions for damaging the enemy
         // and removing the enemy from existence when it reaches

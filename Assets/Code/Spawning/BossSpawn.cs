@@ -40,6 +40,7 @@ namespace GamecampPeli
             }
         }
 
+        // Function to check progress and allow the spawning of boss
         private void CheckProgress()
         {
             if (progressBar.slider.value == progressBar.MaxProgress)
@@ -48,6 +49,8 @@ namespace GamecampPeli
             }
         }
 
+        // Function to start the timer to spawn the boss and show the text to tell the
+        // player that the boss is spawning
         private void StartTimerToSpawn()
         {
             if (bossSpawned) return;
@@ -59,6 +62,7 @@ namespace GamecampPeli
             
         }
         
+        // Function to spawn boss
         private void SpawnBoss()
         {
             bossSpawningTextGO.SetActive(false);

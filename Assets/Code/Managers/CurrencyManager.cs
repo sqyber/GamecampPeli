@@ -21,8 +21,19 @@ namespace GamecampPeli
             set
             {
                 currencyValue = value;
-                currencyDisplay.text = currencyValue.ToString();
+                currencyDisplay.text = "Coins: " + currencyValue;
             }
+        }
+
+        private void Start()
+        {
+            currencyDisplay.text = "Coins: " + currencyValue;
+        }
+
+        // Function used on return to farm buttons to save the currency to playerprefs
+        public void SaveCurrency()
+        {
+            PlayerPrefs.SetInt("Coins", currencyValue);
         }
     }
 }
