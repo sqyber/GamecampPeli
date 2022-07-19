@@ -14,13 +14,14 @@ namespace GamecampPeli
         [SerializeField] private int currentHpBonus = 1;
 
         private TextMeshProUGUI textMesh;
-        
+        private ShopCurrencyManager currencyManager;
+
         // Update is called once per frame
         void Start ()
         {
             textMesh = gameObject.GetComponent<TextMeshProUGUI>();
+            currencyManager = GetComponent<ShopCurrencyManager>();
         }
-
         public void Update()
         {
             textMesh.text = currentHpBonus + " / " + maxHpBonus;
@@ -32,11 +33,13 @@ namespace GamecampPeli
         public void IncreaseValue()
             {
                 currentHpBonus++;
+                PlayerPrefs.SetInt("Coins", currencyManager.SavedCurrency-10 * currentHpBonus);
             }
 
         public void DecreaseValue()
             {
                 currentHpBonus--;
+                PlayerPrefs.SetInt("Coins", currencyManager.SavedCurrency+10 * currentHpBonus);
             }
 
         public void Limiter()
