@@ -22,10 +22,10 @@ namespace GamecampPeli
         void Start ()
         {
             textMesh = gameObject.GetComponent<TextMeshProUGUI>();
-            currencyManager = GetComponent<ShopCurrencyManager>();
-            
-            //Instantiate(currencyManager.SavedCurrency);
-            
+            currencyManager = FindObjectOfType<ShopCurrencyManager>();
+
+            //Instantiate(currencyManager.SavedCurrency;
+
         }
         public void Update()
         {
