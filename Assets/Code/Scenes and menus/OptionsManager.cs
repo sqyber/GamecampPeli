@@ -10,13 +10,17 @@ namespace GamecampPeli
         [SerializeField] private GameObject optionsMenu;
         [SerializeField] private GameObject optionsFirstButton, optionsClosedButton;
         [SerializeField] private GameObject mainMenuButtons;
-        
+        [SerializeField] private GameObject upgradeMenu;
+        [SerializeField] private GameObject coinsDisplay;
+
         // Function to open the options menu
         public void OpenOptions()
         {
             if (optionsMenu.activeInHierarchy) return;
 
             mainMenuButtons.SetActive(false);
+            upgradeMenu.SetActive(false);
+            coinsDisplay.SetActive(false);
             optionsMenu.SetActive(true);
                 
             // Remove the currently selected object for the EventSystem
@@ -33,6 +37,8 @@ namespace GamecampPeli
             
             optionsMenu.SetActive(false);
             mainMenuButtons.SetActive(true);
+            upgradeMenu.SetActive(true);
+            coinsDisplay.SetActive(true);
 
             // Remove the currently selected object for the EventSystem
             EventSystem.current.SetSelectedGameObject(null);

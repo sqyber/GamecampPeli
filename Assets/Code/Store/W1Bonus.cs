@@ -9,36 +9,33 @@ namespace GamecampPeli
 {
     public class W1Bonus : MonoBehaviour
     {
-        
         [SerializeField] private int maxDmgBonus = 10;
         [SerializeField] private int currentDmgBonus = 1;
-
-  
+        [SerializeField] private int baseCostOfUpgrade = 10;
+        
         private TextMeshProUGUI textMesh;
         private ShopCurrencyManager currencyManager;
 
         // Update is called once per frame
-        void Start ()
+        private void Start ()
         {
             textMesh = gameObject.GetComponent<TextMeshProUGUI>();
             currencyManager = FindObjectOfType<ShopCurrencyManager>();
-            
         }
 
-        public void Update()
+        private void Update()
         {
             textMesh.text = currentDmgBonus + " / " + maxDmgBonus;
-
             Limiter();
-            }
+        }
         
 
         public void IncreaseValue()
         {
-            if (currencyManager.SavedCurrency >10* currentDmgBonus)
+            if (currencyManager.SavedCurrency > baseCostOfUpgrade * currentDmgBonus)
             {
+                currencyManager.SavedCurrency -= baseCostOfUpgrade * currentDmgBonus;
                 currentDmgBonus++;
-                currencyManager.SavedCurrency -= 10 * currentDmgBonus;
             }
             else
             {
@@ -46,13 +43,14 @@ namespace GamecampPeli
             }
                 
         }
+        
         //decrease upgrade level
         public void DecreaseValue()
         {
             if (currentDmgBonus > 1)
             {
                 currentDmgBonus--;
-                currencyManager.SavedCurrency += 10 * currentDmgBonus;
+                currencyManager.SavedCurrency += baseCostOfUpgrade * currentDmgBonus;
             }
             else
             {
@@ -61,8 +59,8 @@ namespace GamecampPeli
                 
         }
 
-        public void Limiter()
-            {
+        private void Limiter()
+        {
                 if (currentDmgBonus > maxDmgBonus)
                 {
                     currentDmgBonus = maxDmgBonus;
@@ -71,6 +69,6 @@ namespace GamecampPeli
                 {
                     currentDmgBonus = 1;
                 }
-            }
+        }
     }
-    }
+}
