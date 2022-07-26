@@ -73,5 +73,10 @@ namespace GamecampPeli
                 currentHpBonus = 1;
             }
         }
+        public void HealthPrefSave()
+        {
+            PlayerPrefs.SetInt("HealthBonus", currentHpBonus);
+        }
+
     }
 }
