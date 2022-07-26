@@ -26,6 +26,9 @@ namespace GamecampPeli
         // Bool used to track if the object is facing left or right
         private bool facingLeft;
         
+        // Bool to track if the mob has started its death cycle
+        private bool deathCycle;
+        
         // Sets the target of the enemy to be an object with the tag "PlayerCharacter"
         private void Start()
         {
@@ -34,7 +37,11 @@ namespace GamecampPeli
         
         private void Update()
         {
-            MoveEnemyTowardsPlayer();
+            deathCycle = gameObject.GetComponent<EnemyHealth>().DeathCycleStarted;
+            if (!deathCycle)
+            {
+                MoveEnemyTowardsPlayer();
+            }
         }
 
         private void Initialize()

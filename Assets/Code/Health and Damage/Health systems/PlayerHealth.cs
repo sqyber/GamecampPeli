@@ -20,6 +20,8 @@ namespace GamecampPeli
         [SerializeField] private GameObject deathMenu;
         [SerializeField] private GameObject deathMenuButton;
 
+        private AudioManager audioManager;
+
         public int CurrentHealth
         {
             get { return currentHealth; }
@@ -30,6 +32,7 @@ namespace GamecampPeli
         {
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         // IDamageable interfaces damage function with required components for
@@ -43,6 +46,7 @@ namespace GamecampPeli
             
             if (currentHealth <= 0)
             {
+                audioManager.PlaySfx("PlayerDeath");
                 OpenDeathMenu();
             }
         }

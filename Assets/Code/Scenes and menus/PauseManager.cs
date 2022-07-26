@@ -14,6 +14,8 @@ namespace GamecampPeli
 
         private PauseAction action;
 
+        private AudioManager audioManager;
+
         private void Awake()
         {
             action = new PauseAction();
@@ -22,6 +24,7 @@ namespace GamecampPeli
         private void Start()
         {
             action.Pause.PauseGame.performed += _ => PauseUnpause();
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         private void OnEnable()
@@ -55,6 +58,7 @@ namespace GamecampPeli
             
             if (!pauseMenu.activeInHierarchy)
             {
+                audioManager.PlaySfx("Pause");
                 pauseMenu.SetActive(true);
                 Time.timeScale = 0f;
                 
@@ -66,6 +70,7 @@ namespace GamecampPeli
             }
             else
             {
+                audioManager.PlaySfx("Unpause");
                 pauseMenu.SetActive(false);
                 Time.timeScale = 1f;
             }

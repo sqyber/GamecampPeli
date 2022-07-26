@@ -11,8 +11,19 @@ namespace GamecampPeli
         [SerializeField] private int damage = 1;
         [SerializeField] private float timeBetweenDamageInSeconds = 1.0f;
 
+        // Used to get the player game object and its animator
+        // to play a playerHit animation when player is damaged
+        private GameObject player;
+        private Animator playerAnim;
+
         // Bool used to track when the enemy collides with the player
         private bool collisionWithPlayer;
+
+        private void Start()
+        {
+            player = GameObject.FindWithTag("PlayerCharacter");
+            playerAnim = player.GetComponent<Animator>();
+        }
         
         // Trigger function to detect when collision between enemy and player starts
         private void OnTriggerEnter2D(Collider2D other)
@@ -39,7 +50,8 @@ namespace GamecampPeli
                 if (player.GetComponent<PlayerHealth>().CurrentHealth >= 1)
                 {
                     player.GetComponent<IDamageable>().DealDamage(damage);
-                    Debug.Log("An enemy hit the player!");
+                    FindObjectOfType<AudioManager>().PlaySfx("PlayerHit");
+                    playerAnim.Play("playerHit", -1, 0f);
                 }
                 yield return new WaitForSeconds(timeBetweenDamageInSeconds);
             }

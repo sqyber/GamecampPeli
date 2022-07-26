@@ -53,14 +53,7 @@ namespace GamecampPeli
 
         private void Initialize()
         {
-            if (gameObject.CompareTag("ShooterChainProjectile"))
-            {
-                target = GameObject.FindGameObjectWithTag("ShooterChain").GetComponent<ShootAtNearestInChain>().Target;
-            }
-            else
-            {
-                target = GameObject.FindGameObjectWithTag("Shooter").GetComponent<ShootAtNearest>().Target;
-            }
+            target = GameObject.FindGameObjectWithTag("Shooter").GetComponent<ShootAtNearest>().Target;           
         }
     }
 }
