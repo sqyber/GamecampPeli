@@ -1,44 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace GamecampPeli
 {
-    public class HealthBonus : MonoBehaviour
+    public class W2Bonus : MonoBehaviour
     {
-        [SerializeField] private int maxHpBonus = 10;
-        [SerializeField] private int currentHpBonus = 1;
+        [SerializeField] private int maxDmgBonus = 10;
+        [SerializeField] private int currentDmgBonus = 1;
         [SerializeField] private int baseCostOfUpgrade = 10;
-
+        
         private TextMeshProUGUI textMesh;
         private ShopCurrencyManager currencyManager;
-        
+
         // Update is called once per frame
         private void Start ()
         {
             textMesh = gameObject.GetComponent<TextMeshProUGUI>();
             currencyManager = FindObjectOfType<ShopCurrencyManager>();
-
-            //Instantiate(currencyManager.SavedCurrency;
-
         }
+
         private void Update()
         {
-            textMesh.text = currentHpBonus + " / " + maxHpBonus;
-
+            textMesh.text = currentDmgBonus + " / " + maxDmgBonus;
             Limiter();
         }
         
-        //increase the upgrade level
+
         public void IncreaseValue()
         {
-            if (currencyManager.SavedCurrency > baseCostOfUpgrade * currentHpBonus)
+            if (currencyManager.SavedCurrency > baseCostOfUpgrade * currentDmgBonus)
             {
-                currencyManager.SavedCurrency -= baseCostOfUpgrade * currentHpBonus;
-                currentHpBonus++;
+                currencyManager.SavedCurrency -= baseCostOfUpgrade * currentDmgBonus;
+                currentDmgBonus++;
             }
             else
             {
@@ -50,32 +45,32 @@ namespace GamecampPeli
         //decrease upgrade level
         public void DecreaseValue()
         {
-            if (currentHpBonus > 1)
+            if (currentDmgBonus > 1)
             {
-                currentHpBonus--;
-                currencyManager.SavedCurrency += baseCostOfUpgrade * currentHpBonus;
+                currentDmgBonus--;
+                currencyManager.SavedCurrency += baseCostOfUpgrade * currentDmgBonus;
             }
             else
             {
                 return;
             }
+                
         }
-        
-        //limit the upgrade levels to given values
+
         private void Limiter()
         {
-            if (currentHpBonus > maxHpBonus)
+            if (currentDmgBonus > maxDmgBonus)
             {
-                currentHpBonus = maxHpBonus;
+                currentDmgBonus = maxDmgBonus;
             }
-            else if (currentHpBonus < 1)
+            else if (currentDmgBonus < 1)
             {
-                currentHpBonus = 1;
+                currentDmgBonus = 1;
             }
         }
-        public void HealthPrefSave()
+        public void W2PrefSave()
         {
-            PlayerPrefs.SetInt("HealthBonus", currentHpBonus);
+            PlayerPrefs.SetInt("W2Bonus", currentDmgBonus);
         }
 
     }

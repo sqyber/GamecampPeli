@@ -70,5 +70,10 @@ namespace GamecampPeli
                     currentDmgBonus = 1;
                 }
         }
+        public void W1PrefSave()
+        {
+            PlayerPrefs.SetInt("W1Bonus", currentDmgBonus);
+        }
+
     }
 }
