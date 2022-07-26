@@ -19,12 +19,17 @@ namespace GamecampPeli
         // Start is called before the first frame update
         void Start()
         {
-        hp.HealthPrefSave();
-        spd.SpeedPrefSave();
-        w1.W1PrefSave();
-        w2.W2PrefSave();
-        w3.W3PrefSave();
-        w4.W4PrefSave();
+            
+        }
+
+      public void performSave()
+        {
+            hp.HealthPrefSave();
+            spd.SpeedPrefSave();
+            w1.W1PrefSave();
+            w2.W2PrefSave();
+            w3.W3PrefSave();
+            w4.W4PrefSave();
         }
     }
 }
