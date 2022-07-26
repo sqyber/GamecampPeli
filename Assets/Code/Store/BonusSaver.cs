@@ -26,11 +26,5 @@ namespace GamecampPeli
         w3.W3PrefSave();
         w4.W4PrefSave();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }
