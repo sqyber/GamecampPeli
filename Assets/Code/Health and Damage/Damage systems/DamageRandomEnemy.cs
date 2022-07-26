@@ -9,10 +9,24 @@ namespace GamecampPeli
         [SerializeField] private int damage = 1;
         [SerializeField] private float rateOfFire = 2f;
         [SerializeField] private int amountOfTargets = 1;
+        [SerializeField] private GameObject asparagusProjectile;
+        [SerializeField] private int delayForDamage = 2;
 
         private GameObject[] allEnemies;
         private bool canShoot = true;
         private int amountOfEnemies;
+
+        private GameObject target;
+
+        public GameObject Target
+        {
+            get { return target; }
+        }
+
+        private void Awake()
+        {
+            damage = damage + PlayerPrefs.GetInt("W2Bonus", 0);
+        }
 
         private void Update()
         {
@@ -26,6 +40,16 @@ namespace GamecampPeli
             canShoot = true;
         }
 
+        private IEnumerator SpawnProjectile(GameObject enemy)
+        {
+            Vector2 offset = new Vector2(0f, 2f);
+            Vector2 enemyPosition = enemy.transform.position;
+            
+            Instantiate(asparagusProjectile, enemyPosition + offset, Quaternion.identity);
+            yield return new WaitForSeconds(delayForDamage);
+            enemy.GetComponent<IDamageable>().DealDamage(damage);
+        }
+        
         // Function to damage a random enemy or random enemies depending on the upgrade level
         // of the weapon
         private void DamageARandomEnemy()
@@ -44,7 +68,10 @@ namespace GamecampPeli
             {
                 int randomEnemy = Random.Range(0, amountOfEnemies);
                 GameObject tmpTarget = allEnemies[randomEnemy];
-                tmpTarget.GetComponent<IDamageable>().DealDamage(damage);
+                target = tmpTarget;
+                target.GetComponent<IDamageable>().DealDamage(damage);
+                Debug.Log("Dealt " + damage + " to a random enemy!");
+                //StartCoroutine(SpawnProjectile(tmpTarget));
             }
         }
 

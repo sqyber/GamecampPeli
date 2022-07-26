@@ -15,15 +15,16 @@ namespace GamecampPeli
 
         private TextMeshProUGUI textMesh;
         private ShopCurrencyManager currencyManager;
+
+        private void Awake()
+        {
+            currentHpBonus = PlayerPrefs.GetInt("HealthBonus", 1);
+        }
         
-        // Update is called once per frame
         private void Start ()
         {
             textMesh = gameObject.GetComponent<TextMeshProUGUI>();
             currencyManager = FindObjectOfType<ShopCurrencyManager>();
-
-            //Instantiate(currencyManager.SavedCurrency;
-
         }
         private void Update()
         {
@@ -44,7 +45,6 @@ namespace GamecampPeli
             {
                 return;
             }
-                
         }
         
         //decrease upgrade level

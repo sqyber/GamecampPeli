@@ -13,6 +13,7 @@ public class PlayerMover : MonoBehaviour
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        movementSpeed = movementSpeed + PlayerPrefs.GetInt("SpeedBonus", 0);
     }
     
     private void FixedUpdate()

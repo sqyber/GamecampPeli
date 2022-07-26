@@ -30,6 +30,7 @@ namespace GamecampPeli
         // Initializing currentHealth and the maxHealth to the health bar
         private void Awake()
         {
+            maxHealth = maxHealth + PlayerPrefs.GetInt("HealthBonus", 0);
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
             audioManager = FindObjectOfType<AudioManager>();

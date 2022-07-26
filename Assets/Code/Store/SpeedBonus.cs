@@ -16,8 +16,11 @@ namespace GamecampPeli
         private TextMeshProUGUI textMesh;
         private ShopCurrencyManager currencyManager;
 
+        private void Awake()
+        {
+            currentSpeedBonus = PlayerPrefs.GetInt("SpeedBonus", 1);
+        }
         
-        // Update is called once per frame
         private void Start ()
         {
             textMesh = gameObject.GetComponent<TextMeshProUGUI>();

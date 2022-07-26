@@ -47,9 +47,12 @@ namespace GamecampPeli
             if (player == null) throw new ArgumentNullException(nameof(player));
             while (collisionWithPlayer)
             {
-                player.GetComponent<IDamageable>().DealDamage(damage);
-                FindObjectOfType<AudioManager>().PlaySfx("PlayerHit");
-                playerAnim.Play("playerHit", -1, 0f);
+                if (player.GetComponent<PlayerHealth>().CurrentHealth > 0)
+                {
+                    player.GetComponent<IDamageable>().DealDamage(damage);
+                    FindObjectOfType<AudioManager>().PlaySfx("PlayerHit");
+                    playerAnim.Play("playerHit", -1, 0f);
+                }
                 
                 yield return new WaitForSeconds(timeBetweenDamageInSeconds);
             }

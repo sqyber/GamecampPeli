@@ -132051,7 +132051,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -132072,7 +132072,7 @@ PrefabInstance:
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1251759005}
+      objectReference: {fileID: 803624561}
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -132091,7 +132091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SaveCurrency
+      value: StopPlayingSong
       objectReference: {fileID: 0}
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -132099,7 +132099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: GamecampPeli.CurrencyManager, Assembly-CSharp
+      value: GamecampPeli.MusicStartManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1447554031, guid: e4702723b6084a84b8ae6af91d49c19d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -132426,9 +132426,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1024113183}
     m_Modifications:
     - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 297080376}
     - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -132437,6 +132445,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1251759005}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 803624561}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: StopPlayingSong
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: GamecampPeli.MusicStartManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764073745955995098, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1764073746112618130, guid: b77bce3b25f045446b56fb9774ab324b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -132644,6 +132676,14 @@ PrefabInstance:
       propertyPath: deathMenuButton
       value: 
       objectReference: {fileID: 979963178}
+    - target: {fileID: 392893129783765878, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 392893129783765878, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
+      propertyPath: asparagusProjectile
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 392893129783765880, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -132873,7 +132913,7 @@ PrefabInstance:
       objectReference: {fileID: 576912400}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -132881,6 +132921,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
@@ -132896,11 +132940,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1251759005}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 803624561}
+    - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
@@ -132916,6 +132968,10 @@ PrefabInstance:
       value: SaveCurrency
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: StopPlayingSong
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: GamecampPeli.PauseManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -132924,11 +132980,19 @@ PrefabInstance:
       value: GamecampPeli.CurrencyManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: GamecampPeli.MusicStartManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118579858898826, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5712118579858898827, guid: 0aee0ddabcd62c24e85093086e95127e, type: 3}

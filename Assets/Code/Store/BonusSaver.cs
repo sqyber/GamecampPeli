@@ -6,7 +6,6 @@ namespace GamecampPeli
 {
     public class BonusSaver : MonoBehaviour
     {
-
         private HealthBonus hp;
         private SpeedBonus spd;
         private W1Bonus w1;
@@ -14,15 +13,17 @@ namespace GamecampPeli
         private W3Bonus w3;
         private W4Bonus w4;
 
-
-
-        // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-            
+            hp = FindObjectOfType<HealthBonus>();
+            spd = FindObjectOfType<SpeedBonus>();
+            w1 = FindObjectOfType<W1Bonus>();
+            w2 = FindObjectOfType<W2Bonus>();
+            w3 = FindObjectOfType<W3Bonus>();
+            w4 = FindObjectOfType<W4Bonus>();
         }
 
-      public void performSave()
+        public void performSave()
         {
             hp.HealthPrefSave();
             spd.SpeedPrefSave();

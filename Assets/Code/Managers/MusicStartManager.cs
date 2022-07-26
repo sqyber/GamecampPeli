@@ -10,7 +10,8 @@ namespace GamecampPeli
     {
         private AudioManager audioManager;
 
-        [SerializeField] private String[] songs;
+        [SerializeField] private string[] songs;
+        private string song;
 
         private void Awake()
         {
@@ -21,9 +22,14 @@ namespace GamecampPeli
         {
             int songNumber = Random.Range(0, 4);
 
-            string song = songs[songNumber];
+            song = songs[songNumber];
 
             audioManager.PlaySong(song);
+        }
+
+        public void StopPlayingSong()
+        {
+            audioManager.StopPlayingSong(song);
         }
     }
 }

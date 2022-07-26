@@ -19,6 +19,16 @@ namespace GamecampPeli
         // Collider2D used to store the game objects collider
         private Collider2D gOCollider;
 
+        private void Awake()
+        {
+            damage = damagingObjectTag switch
+            {
+                "DamageAura" => damage + PlayerPrefs.GetInt("W3Bonus", 0),
+                "Orbiter" => damage + PlayerPrefs.GetInt("W4Bonus", 0),
+                _ => damage
+            };
+        }
+        
         private void Start()
         {
             gOCollider = gameObject.GetComponent<Collider2D>();
@@ -48,6 +58,7 @@ namespace GamecampPeli
                 if (inRange)
                 {
                     enemy.GetComponent<IDamageable>().DealDamage(damage);
+                    Debug.Log(damagingObjectTag + " damage is " + damage);
                     yield return new WaitForSeconds(timeBetweenDamageInSeconds);
                 }
                 else

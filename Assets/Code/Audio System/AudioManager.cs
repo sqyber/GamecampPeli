@@ -13,7 +13,7 @@ namespace GamecampPeli
         public Sound[] songs;
         public Sound[] sfx;
 
-        public static AudioManager instance;
+        //public static AudioManager instance;
 
         [Range(0f, 1f)] public float SFXVolume = 1f;
         [Range(0f, 1f)] public float MusicVolume = 1f;
@@ -22,7 +22,7 @@ namespace GamecampPeli
         
         private void Awake()
         {
-            if (instance == null)
+            /*if (instance == null)
             {
                 instance = this;
             }
@@ -30,9 +30,9 @@ namespace GamecampPeli
             {
                 Destroy(gameObject);
                 return;
-            }
+            }*/
             
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 
             SFXVolume = PlayerPrefs.GetFloat("SFXVol", 1);
             sfxSlider.value = SFXVolume;

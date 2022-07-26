@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace GamecampPeli
 {
-    public class ProjectileMovement : MonoBehaviour
+    public class RandomProjectileMovement : MonoBehaviour
     {
-        // Projectiles speed and damage
+        // Projectiles speed
         [SerializeField] private float projectileSpeed = 1f;
-        [SerializeField] private int damage = 1;
 
         // Used to store the target game object
         private GameObject target;
@@ -47,15 +46,12 @@ namespace GamecampPeli
             if (Vector2.Distance(transform.position, target.transform.position) < 0.4)
             {
                 Destroy(gameObject);
-                target.GetComponent<IDamageable>().DealDamage(damage);
-                Debug.Log("Projectile did " + damage + " to the nearest enemy!");
             }
         }
 
         private void Initialize()
         {
-            target = GameObject.FindGameObjectWithTag("Shooter").GetComponent<ShootAtNearest>().Target;
-            damage = damage + PlayerPrefs.GetInt("W1Bonus", 0);
+            target = GetComponent<DamageRandomEnemy>().Target;
         }
     }
 }

@@ -56,6 +56,7 @@ namespace GamecampPeli
             if (health > 0)
             {
                 audioManager.PlaySfx("EnemyHit");
+                animator.Play("Hit", -1, 0f);
                 health -= damage;
             }
             
