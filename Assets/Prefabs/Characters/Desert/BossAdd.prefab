@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4000292492972072011}
   - component: {fileID: 4000292492972072010}
   - component: {fileID: 4000292492972072013}
+  - component: {fileID: 8534771335311098004}
   - component: {fileID: 4000292492972072014}
   - component: {fileID: 4000292492972072015}
   m_Layer: 0
@@ -147,6 +148,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   timeBetweenDamageInSeconds: 1
+  damagingObjectName: 
+--- !u!114 &8534771335311098004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000292492972072112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e497f26d688987409d11c90edcb92df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  timeBetweenDamageInSeconds: 1
+  damagingObjectName: 
 --- !u!60 &4000292492972072014
 PolygonCollider2D:
   m_ObjectHideFlags: 0

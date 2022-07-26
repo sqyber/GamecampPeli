@@ -10,6 +10,7 @@ namespace GamecampPeli
     {
         [SerializeField] private int damage = 1;
         [SerializeField] private float timeBetweenDamageInSeconds = 1.0f;
+        [SerializeField] private String damagingObjectTag;
 
         // Bool to track if enemy is in range of AoE
         private bool inRangeOfAOE = false;
@@ -25,14 +26,14 @@ namespace GamecampPeli
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.gameObject.CompareTag("DamageAura")) return;
+            if (!other.gameObject.CompareTag(damagingObjectTag)) return;
             inRangeOfAOE = true;
             StartCoroutine(AOEDamage(gOCollider));
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (!other.gameObject.CompareTag("DamageAura")) return;
+            if (!other.gameObject.CompareTag(damagingObjectTag)) return;
             inRangeOfAOE = false;
             StopCoroutine(AOEDamage(gOCollider));
         }

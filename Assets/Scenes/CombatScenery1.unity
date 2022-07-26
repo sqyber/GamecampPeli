@@ -190,6 +190,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 787918801}
     m_Modifications:
+    - target: {fileID: 5519771908236936375, guid: 1c8101e3c64899c4fba1c95af7dcfc77, type: 3}
+      propertyPath: damagingObjectTag
+      value: Orbiter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519771908236936375, guid: 1c8101e3c64899c4fba1c95af7dcfc77, type: 3}
+      propertyPath: damagingObjectName
+      value: Orbiter
+      objectReference: {fileID: 0}
     - target: {fileID: 7451393043555486920, guid: 1c8101e3c64899c4fba1c95af7dcfc77, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -237,6 +245,14 @@ PrefabInstance:
     - target: {fileID: 7451393043555486923, guid: 1c8101e3c64899c4fba1c95af7dcfc77, type: 3}
       propertyPath: progressAmount
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451393043555486926, guid: 1c8101e3c64899c4fba1c95af7dcfc77, type: 3}
+      propertyPath: damagingObjectTag
+      value: DamageAura
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451393043555486926, guid: 1c8101e3c64899c4fba1c95af7dcfc77, type: 3}
+      propertyPath: damagingObjectName
+      value: DamageAura
       objectReference: {fileID: 0}
     - target: {fileID: 7451393043555486927, guid: 1c8101e3c64899c4fba1c95af7dcfc77, type: 3}
       propertyPath: m_Name
@@ -1476,6 +1492,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2578356186441808437, guid: d4664162c1f904d42925513712894f23, type: 3}
+      propertyPath: damagingObjectTag
+      value: DamageAura
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578356186441808437, guid: d4664162c1f904d42925513712894f23, type: 3}
+      propertyPath: damagingObjectName
+      value: DamageAura
+      objectReference: {fileID: 0}
     - target: {fileID: 2578356186441808439, guid: d4664162c1f904d42925513712894f23, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -1483,6 +1507,14 @@ PrefabInstance:
     - target: {fileID: 2578356186441808439, guid: d4664162c1f904d42925513712894f23, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656549208642819737, guid: d4664162c1f904d42925513712894f23, type: 3}
+      propertyPath: damagingObjectTag
+      value: Orbiter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656549208642819737, guid: d4664162c1f904d42925513712894f23, type: 3}
+      propertyPath: damagingObjectName
+      value: Orbiter
       objectReference: {fileID: 0}
     - target: {fileID: 4290415543211530555, guid: d4664162c1f904d42925513712894f23, type: 3}
       propertyPath: boss
@@ -131705,6 +131737,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 787918801}
     m_Modifications:
+    - target: {fileID: 2174160435881656223, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
+      propertyPath: damagingObjectTag
+      value: Orbiter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174160435881656223, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
+      propertyPath: damagingObjectName
+      value: Orbiter
+      objectReference: {fileID: 0}
     - target: {fileID: 2445263711877228816, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -131768,6 +131808,14 @@ PrefabInstance:
     - target: {fileID: 2445263711877228823, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906377260742379833, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
+      propertyPath: damagingObjectTag
+      value: DamageAura
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906377260742379833, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
+      propertyPath: damagingObjectName
+      value: DamageAura
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
@@ -132648,6 +132696,26 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1462985094}
+    - target: {fileID: 3899798984087163832, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899798984087163834, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899798984087163834, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899798984087163836, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
+      propertyPath: movementSpeed
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899798984087163839, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
+      propertyPath: m_TagString
+      value: Orbiter
+      objectReference: {fileID: 0}
     - target: {fileID: 3899798984618464410, guid: 96fce278f5b24ee488fc3eace9f1860b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -132668,6 +132736,10 @@ PrefabInstance:
     - target: {fileID: 4000292492972072011, guid: 87f78a73d20386c4297ee18908942bfa, type: 3}
       propertyPath: movementSpeed
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000292492972072013, guid: 87f78a73d20386c4297ee18908942bfa, type: 3}
+      propertyPath: damagingObjectTag
+      value: DamageAura
       objectReference: {fileID: 0}
     - target: {fileID: 4000292492972072112, guid: 87f78a73d20386c4297ee18908942bfa, type: 3}
       propertyPath: m_Name
@@ -132716,6 +132788,10 @@ PrefabInstance:
     - target: {fileID: 4000292492972072113, guid: 87f78a73d20386c4297ee18908942bfa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534771335311098004, guid: 87f78a73d20386c4297ee18908942bfa, type: 3}
+      propertyPath: damagingObjectTag
+      value: Orbiter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f78a73d20386c4297ee18908942bfa, type: 3}

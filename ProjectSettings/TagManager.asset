@@ -8,10 +8,9 @@ TagManager:
   - Enemy
   - Shooter
   - DamageAura
-  - Oribter
   - ProgressBar
-  - ShooterChain
   - ShooterProjectile
+  - Orbiter
   layers:
   - Default
   - TransparentFX

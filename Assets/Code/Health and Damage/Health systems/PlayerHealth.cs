@@ -41,9 +41,12 @@ namespace GamecampPeli
         // If the players health is 0 or below, open the death menu
         public void DealDamage(int damage)
         {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
-            
+            if (currentHealth > 0)
+            {
+                currentHealth -= damage;
+                healthBar.SetHealth(currentHealth);
+            }
+
             if (currentHealth <= 0)
             {
                 audioManager.PlaySfx("PlayerDeath");

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2445263711877228828}
   - component: {fileID: 1955888169}
   - component: {fileID: 4906377260742379833}
+  - component: {fileID: 2174160435881656223}
   - component: {fileID: 930447410}
   m_Layer: 0
   m_Name: smallMob
@@ -163,6 +164,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   timeBetweenDamageInSeconds: 1
+  damagingObjectName: 
+--- !u!114 &2174160435881656223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445263711877228823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e497f26d688987409d11c90edcb92df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  timeBetweenDamageInSeconds: 1
+  damagingObjectName: 
 --- !u!95 &930447410
 Animator:
   serializedVersion: 4

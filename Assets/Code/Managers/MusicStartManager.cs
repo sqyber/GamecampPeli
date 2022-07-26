@@ -19,7 +19,7 @@ namespace GamecampPeli
         
         private void Start()
         {
-            int songNumber = Random.Range(0, 5);
+            int songNumber = Random.Range(0, 4);
 
             string song = songs[songNumber];
 

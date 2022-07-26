@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2578356186441808427}
   - component: {fileID: 2578356186441808426}
   - component: {fileID: 2578356186441808437}
+  - component: {fileID: 2656549208642819737}
   - component: {fileID: 7606667523606243602}
   - component: {fileID: 4290415543211530555}
   - component: {fileID: 1532367646}
@@ -188,6 +189,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   timeBetweenDamageInSeconds: 1
+  damagingObjectName: 
+--- !u!114 &2656549208642819737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2578356186441808439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e497f26d688987409d11c90edcb92df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  timeBetweenDamageInSeconds: 1
+  damagingObjectName: 
 --- !u!114 &7606667523606243602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winMenu: {fileID: 0}
-  boss: {fileID: 0}
+  winMenuButton: {fileID: 0}
 --- !u!95 &1532367646
 Animator:
   serializedVersion: 4
