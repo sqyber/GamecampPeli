@@ -12,6 +12,7 @@ namespace GamecampPeli
         [SerializeField] private int maxSpeedBonus = 10;
         [SerializeField] private int currentSpeedBonus = 1;
         [SerializeField] private int baseCostOfUpgrade = 10;
+        [SerializeField] private int bonusMultiplier = 10;
 
         private TextMeshProUGUI textMesh;
         private ShopCurrencyManager currencyManager;
@@ -73,8 +74,9 @@ namespace GamecampPeli
         }
         public void SpeedPrefSave()
         {
-            PlayerPrefs.SetInt("SpeedBonus", currentSpeedBonus);
+            //PlayerPrefs.SetInt("SpeedBonus", currentSpeedBonus);
+            PlayerPrefs.SetInt("SpeedBonus", 7);
+            PlayerPrefs.SetInt("SpeedBonusMultiplied", currentSpeedBonus * bonusMultiplier);
         }
-        
     }
 }

@@ -271,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234123061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -65.5, z: 0}
+  m_LocalPosition: {x: 0, y: -33.504, z: 0}
   m_LocalScale: {x: 101.99947, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -413,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364136645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0002, y: 65.5, z: 0}
+  m_LocalPosition: {x: 0.0002, y: 33.497, z: 0}
   m_LocalScale: {x: 101.99947, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1249,8 +1249,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111131367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.5, y: -0.0032, z: 0}
-  m_LocalScale: {x: 1, y: 129.99318, z: 1}
+  m_LocalPosition: {x: -50.5, y: 0.0197, z: 0}
+  m_LocalScale: {x: 1, y: 69.9361, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 754738252}
@@ -1925,8 +1925,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512419830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.501, y: -0.0032, z: 0}
-  m_LocalScale: {x: 1, y: 129.99318, z: 1}
+  m_LocalPosition: {x: 50.501, y: 0.0188, z: 0}
+  m_LocalScale: {x: 1, y: 69.94354, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 754738252}
@@ -133036,6 +133036,18 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1544782823}
+    - target: {fileID: 684814108, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 684814108, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 684814108, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 977718090, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -133048,6 +133060,18 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1544782823}
+    - target: {fileID: 1170051113, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170051113, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170051113, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1716050300, guid: 25027b94a6f8d224f9baab553d7d8db6, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

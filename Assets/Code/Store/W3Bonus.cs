@@ -76,6 +76,5 @@ namespace GamecampPeli
         {
             PlayerPrefs.SetInt("W3Bonus", currentDmgBonus);
         }
-
     }
 }

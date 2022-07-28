@@ -17,7 +17,7 @@ public class PlayerMover : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        movementSpeed = movementSpeed + PlayerPrefs.GetInt("SpeedBonus", 0);
+        movementSpeed = PlayerPrefs.GetInt("SpeedBonusMultiplied", 0) + movementSpeed;
     }
     
     private void FixedUpdate()

@@ -12,6 +12,7 @@ namespace GamecampPeli
         [SerializeField] private int maxHpBonus = 10;
         [SerializeField] private int currentHpBonus = 1;
         [SerializeField] private int baseCostOfUpgrade = 10;
+        [SerializeField] private int bonusMultiplier = 10;
 
         private TextMeshProUGUI textMesh;
         private ShopCurrencyManager currencyManager;
@@ -76,7 +77,7 @@ namespace GamecampPeli
         public void HealthPrefSave()
         {
             PlayerPrefs.SetInt("HealthBonus", currentHpBonus);
+            PlayerPrefs.SetInt("HealthBonusMultiplied", currentHpBonus * bonusMultiplier);
         }
-
     }
 }
