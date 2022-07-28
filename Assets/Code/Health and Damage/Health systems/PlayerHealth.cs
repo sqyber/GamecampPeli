@@ -19,6 +19,9 @@ namespace GamecampPeli
         // Death menu objects
         [SerializeField] private GameObject deathMenu;
         [SerializeField] private GameObject deathMenuButton;
+        
+        // Music start manager
+        [SerializeField] private GameObject musicStartManager;
 
         private AudioManager audioManager;
 
@@ -50,6 +53,7 @@ namespace GamecampPeli
 
             if (currentHealth <= 0)
             {
+                audioManager.StopPlayingSong(musicStartManager.GetComponent<MusicStartManager>().Song);
                 audioManager.PlaySfx("PlayerDeath");
                 OpenDeathMenu();
             }

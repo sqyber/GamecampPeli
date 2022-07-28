@@ -13,10 +13,23 @@ namespace GamecampPeli
         // The win menu button
         [SerializeField] private GameObject winMenuButton;
         
+        // Music start manager
+        [SerializeField] private GameObject musicStartManager;
+
+        private AudioManager audioManager;
+
+        private void Start()
+        {
+            audioManager = FindObjectOfType<AudioManager>();
+        }
+        
         // On the destroy of object, open win menu and set timescale to 0
         private void OnDestroy()
         {
             Time.timeScale = 0f;
+
+            audioManager.StopPlayingSong(musicStartManager.GetComponent<MusicStartManager>().Song);
+            audioManager.PlaySfx("WinJingle");
 
             winMenu.SetActive(true);
             

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8addb8ae823d98f44ad4f013cad7c3e0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &995206708510014348
@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smallMob: {fileID: 2445263711877228823, guid: 0117225cff448004c8e2724b037b0c2c, type: 3}
+  bigMob: {fileID: 0}
+  progressBar: {fileID: 0}
   spawnTime: 1
   spawnDelay: 5
+  divisionValueForBiggerMobs: 10
+  spawnBigMob: 0
   stopSpawning: 0

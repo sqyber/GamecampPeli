@@ -9,7 +9,7 @@ namespace GamecampPeli
         [SerializeField] private Transform targetToOrbitAround;
         [SerializeField] private float movementSpeed = 2f;
         [SerializeField] private float rotationRadius = 2f;
-        
+
         private float posX, posY, angle = 0f;
 
         private void FixedUpdate()

@@ -22,18 +22,6 @@ namespace GamecampPeli
         
         private void Awake()
         {
-            /*if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }*/
-            
-            //DontDestroyOnLoad(gameObject);
-
             SFXVolume = PlayerPrefs.GetFloat("SFXVol", 1);
             sfxSlider.value = SFXVolume;
             MusicVolume = PlayerPrefs.GetFloat("MusicVol", 1);

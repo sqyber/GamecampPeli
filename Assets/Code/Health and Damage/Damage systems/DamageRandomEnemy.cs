@@ -9,19 +9,11 @@ namespace GamecampPeli
         [SerializeField] private int damage = 1;
         [SerializeField] private float rateOfFire = 2f;
         [SerializeField] private int amountOfTargets = 1;
-        [SerializeField] private GameObject asparagusProjectile;
-        [SerializeField] private int delayForDamage = 2;
+        [SerializeField] private GameObject particleEffect;
 
         private GameObject[] allEnemies;
         private bool canShoot = true;
         private int amountOfEnemies;
-
-        private GameObject target;
-
-        public GameObject Target
-        {
-            get { return target; }
-        }
 
         private void Awake()
         {
@@ -42,11 +34,12 @@ namespace GamecampPeli
 
         private IEnumerator SpawnProjectile(GameObject enemy)
         {
-            Vector2 offset = new Vector2(0f, 2f);
+            if (enemy == null) yield break;
             Vector2 enemyPosition = enemy.transform.position;
+            GameObject tmpProjectile = particleEffect;
             
-            Instantiate(asparagusProjectile, enemyPosition + offset, Quaternion.identity);
-            yield return new WaitForSeconds(delayForDamage);
+            Instantiate(tmpProjectile, enemyPosition, Quaternion.identity);
+
             enemy.GetComponent<IDamageable>().DealDamage(damage);
         }
         
@@ -68,10 +61,9 @@ namespace GamecampPeli
             {
                 int randomEnemy = Random.Range(0, amountOfEnemies);
                 GameObject tmpTarget = allEnemies[randomEnemy];
-                target = tmpTarget;
-                target.GetComponent<IDamageable>().DealDamage(damage);
+                //tmpTarget.GetComponent<IDamageable>().DealDamage(damage);
                 Debug.Log("Dealt " + damage + " to a random enemy!");
-                //StartCoroutine(SpawnProjectile(tmpTarget));
+                StartCoroutine(SpawnProjectile(tmpTarget));
             }
         }
 

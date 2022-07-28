@@ -13,6 +13,11 @@ namespace GamecampPeli
         [SerializeField] private string[] songs;
         private string song;
 
+        public string Song
+        {
+            get { return song; }
+        }
+
         private void Awake()
         {
             audioManager = FindObjectOfType<AudioManager>();

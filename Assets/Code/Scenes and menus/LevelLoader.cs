@@ -11,6 +11,8 @@ namespace GamecampPeli
         [SerializeField] private float transitionTime = 1f;
         [SerializeField] private Animator transition;
 
+        private readonly string[] combatSceneNames = new string[] {"CombatScenery1", "CombatScenery2", "CombatScenery3"};
+
         // Function used for buttons etc. to start the transition to another scene
         public void ChangeScene()
         {
@@ -26,6 +28,22 @@ namespace GamecampPeli
             yield return new WaitForSeconds(transitionTime);
 
             SceneManager.LoadScene(sceneName);
+        }
+        
+        public void ChangeToRandomScene()
+        {
+            StartCoroutine(nameof(LoadRandomLevel));
+        }
+
+        private IEnumerator LoadRandomLevel()
+        {
+            transition.SetTrigger("Start");
+
+            int randomNumber = Random.Range(0, 3);
+
+            yield return new WaitForSeconds(transitionTime);
+
+            SceneManager.LoadScene(combatSceneNames[randomNumber]);
         }
     }
 }

@@ -116,7 +116,12 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
-  SFXVolume: 0.75
+  - name: WinJingle
+    clip: {fileID: 8300000, guid: 38061120290ecdd40a0a58396da4cf5a, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  SFXVolume: 1
   MusicVolume: 1
   sfxSlider: {fileID: 0}
   musicSlider: {fileID: 0}
