@@ -8,16 +8,21 @@ namespace GamecampPeli
     {
         [SerializeField] private int damage = 1;
         [SerializeField] private float rateOfFire = 2f;
+        [SerializeField] private float firstHitDelay = 2f;
         [SerializeField] private int amountOfTargets = 1;
         [SerializeField] private GameObject particleEffect;
+        [SerializeField] private string soundName;
 
         private GameObject[] allEnemies;
         private bool canShoot = true;
         private int amountOfEnemies;
+        private AudioManager audioManager;
+        private bool firstHit = true;
 
         private void Awake()
         {
             damage = damage + PlayerPrefs.GetInt("W2Bonus", 0);
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         private void Update()
@@ -35,10 +40,14 @@ namespace GamecampPeli
         private IEnumerator SpawnProjectile(GameObject enemy)
         {
             if (enemy == null) yield break;
+            if (firstHit) yield return new WaitForSeconds(firstHitDelay);
+            firstHit = false;
+            
             Vector2 enemyPosition = enemy.transform.position;
             GameObject tmpProjectile = particleEffect;
             
             Instantiate(tmpProjectile, enemyPosition, Quaternion.identity);
+            audioManager.PlaySfx(soundName);
 
             enemy.GetComponent<IDamageable>().DealDamage(damage);
         }

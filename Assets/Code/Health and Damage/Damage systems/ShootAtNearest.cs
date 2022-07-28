@@ -10,13 +10,20 @@ namespace GamecampPeli
         [SerializeField] private float rangeOfFiring = 14;
         [SerializeField] private float fireRate = 3f;
         [SerializeField] private GameObject projectile;
+        [SerializeField] private string soundName;
         
         private GameObject target;
         private bool canShoot = true;
+        private AudioManager audioManager;
 
         public GameObject Target
         {
             get { return target; }
+        }
+
+        private void Start()
+        {
+            audioManager = FindObjectOfType<AudioManager>();
         }
  
         private void Update()
@@ -27,6 +34,7 @@ namespace GamecampPeli
         // Function to spawn a projectile that is shot at the enemy
         private void Fire()
         {
+            audioManager.PlaySfx(soundName);
             GameObject tmpProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         }
 

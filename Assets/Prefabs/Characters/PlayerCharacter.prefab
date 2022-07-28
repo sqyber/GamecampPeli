@@ -201,6 +201,7 @@ MonoBehaviour:
   healthBar: {fileID: 3899798985358604243}
   deathMenu: {fileID: 0}
   deathMenuButton: {fileID: 0}
+  musicStartManager: {fileID: 0}
 --- !u!114 &392893129783765878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,9 +216,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   rateOfFire: 4
+  firstHitDelay: 2
   amountOfTargets: 2
-  asparagusProjectile: {fileID: 0}
-  delayForDamage: 2
+  particleEffect: {fileID: 0}
+  soundName: RandomTargetHit
 --- !u!95 &392893129783765874
 Animator:
   serializedVersion: 4
@@ -338,6 +340,7 @@ MonoBehaviour:
   rangeOfFiring: 24
   fireRate: 3
   projectile: {fileID: 0}
+  soundName: Sickle
 --- !u!1 &3899798983791482227
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +419,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1864065269, guid: 3cfa3aa61340b914b987eb66b9a48c78, type: 3}
+  m_Sprite: {fileID: -1107803502, guid: e82fdfbaa5505ec43b5c2042cec282a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.627451}
   m_FlipX: 0
   m_FlipY: 0
