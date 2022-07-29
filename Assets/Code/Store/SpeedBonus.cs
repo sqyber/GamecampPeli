@@ -74,8 +74,7 @@ namespace GamecampPeli
         }
         public void SpeedPrefSave()
         {
-            //PlayerPrefs.SetInt("SpeedBonus", currentSpeedBonus);
-            PlayerPrefs.SetInt("SpeedBonus", 7);
+            PlayerPrefs.SetInt("SpeedBonus", currentSpeedBonus);
             PlayerPrefs.SetInt("SpeedBonusMultiplied", currentSpeedBonus * bonusMultiplier);
         }
     }
